@@ -10,15 +10,16 @@
         $bill = '';
 
         if (is_numeric($units)) {
-            if(units >= 50) 
-                $bill = (units * 3.5);
+            $tmp = $units;
+            if($units <= 50) 
+                $bill = ($units * 3.5);
                 // echo "Total amount of" + $units "-" + $bill;
-            else if(units >= 250)
-                $bill = (units * 6.5);
-            else if(units >= 200)
-                $bill = (units * 5.20);
-            else if(units >= 100)
-                $bill = (units * 4.00);
+            else if($units >= 250)
+                $bill = ($units * 6.5);
+            else if($units >= 200)
+                $bill = ($units * 5.20);
+            else if($units >= 100)
+                $bill = ($units * 4.00);
             else
                 $bill = "Server Issue, Plz..try again later!";
         }
@@ -40,7 +41,7 @@
                        <br>
                         <p>
                             <b class="#">Bill</b>
-                            <input class="rounded"  placeholder="Get Bill" readonly="readonly" name="bill" value="<?php echo $bill; ?>">
+                            <input class="rounded"  placeholder="Get Bill" readonly="readonly" name="bill" value="<?php echo $bill; ?>">RS
                         </p>
                         <input type="submit" class="btn btn-md btn-danger rounded" name="operator" value="GET" />
                     </form>                
